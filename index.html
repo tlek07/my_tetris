@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my tetris</title>
+<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+<!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="score">
+            <img src="./assets/picture.png" alt="" srcset="" width="200px">
+            <p>Score</p> <p id="score_count"> 0</p>
+        </div>
+        <canvas width="320" height="640" id="game_space"></canvas>
+        <br>
+        <br>
+         <button id="play_btn" onclick="play()">play</button>
+        <br>
+
+        <div class="instructions">
+            <h3><p>Control Instruction</p></h3>
+                <ul>
+                <h4><li>Left: ⬅️ </li></h4>
+                <h4><li>Down: ⬇️</li></h4>
+                <h4><li>Right: ➡️</li></h4>
+                <h4><li>Rotate: ⬆️ 🔄</li></h4>
+                <h4><li>Hard Drop: ⏬ <b>SPACE BAR</b></li></h4>
+                <h4><li>Pause: ⭕<b>"P"</b></li></h4>
+                <h4><li>End Game: ❌ <b>"ESC"</b></li></h4>
+                </ul>
+
+            </div>
+
+
+
+        </ul></div>
+
+<script src="tetris.js"></script>
+
+<!-- Background music, only works with the Firefox browser -->
+<audio autoplay loop>
+    <source src="./assets/Tetris.mp3" type="audio/mp3">
+</audio>
+
+<!-- This is a background music prototype that is triggered by the Play music button. -->
+<audio id="audioPlayer" src="./assets/Tetris .mp3"></audio>
+<button id="playButton" class="btn btn-success" onclick="togglePlayback()">Play music</button>
+
+   <script>
+      const audioPlayer = document.getElementById('audioPlayer');
+      const playButton = document.getElementById('playButton');
+
+      function togglePlayback() {
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+          playButton.textContent = 'Pause';
+        } else {
+          audioPlayer.pause();
+          playButton.textContent = 'Play';
+        }
+      }
+
+    </script>
+
+</body>
+</html>
+
+
+
